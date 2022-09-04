@@ -13,19 +13,14 @@ const os = require('os');
 module.exports =
 {
 	// Listening hostname (just for `gulp live` task).
-	domain : process.env.DOMAIN || 'localhost',
+	domain : '127.0.0.1',
 	// Signaling settings (protoo WebSocket server and HTTP API server).
 	https  :
 	{
 		listenIp   : '127.0.0.1',
 		// NOTE: Don't change listenPort (client app assumes 4443).
-		listenPort : process.env.PROTOO_LISTEN_PORT || 4443,
-		// NOTE: Set your own valid certificate files.
-		tls        :
-		{
-			cert : process.env.HTTPS_CERT_FULLCHAIN || `${__dirname}/certs/fullchain.pem`,
-			key  : process.env.HTTPS_CERT_PRIVKEY || `${__dirname}/certs/privkey.pem`
-		}
+		listenPort : 4443,
+		// NOTE: Set your own valid certificate files.		
 	},
 	// mediasoup settings.
 	mediasoup :

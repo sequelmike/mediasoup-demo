@@ -6,6 +6,6 @@ const hostname = process.env.HOSTNAME || 'test.mediasoup.org';
 if (hostname === 'test.mediasoup.org')
     protooPort = 4444;
 function getProtooUrl({ roomId, peerId }) {
-    return `wss://${hostname}:${protooPort}/?roomId=${roomId}&peerId=${peerId}`;
+    return `ws://${hostname}:${protooPort}/?roomId=${roomId}&peerId=${peerId}`;
 }
 exports.getProtooUrl = getProtooUrl;
